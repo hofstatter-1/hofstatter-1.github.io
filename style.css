@@ -35,3 +35,6 @@ body {
 #operations{
 font-family: verdana;
 }
+div.relative {
+  position: relative;
+}
