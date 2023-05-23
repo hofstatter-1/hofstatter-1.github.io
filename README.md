@@ -1,56 +1,54 @@
 # hofstatter-1.github.io
-<!DOCTYPE html>
-<html>
+<html lang="en">
+<style>
+body {
+    background-color: #3f3e3e;
+}
+</style>
 <head>
-    <title>Bouncing CP3</title>
-    <style>
-        #logo {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 150px;
-            height: 200px;
-            background-image: url('IMG_5059.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-color: black;
-        }
-    </style>
+    <body text="white"></body>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMIcalc</title>
 </head>
 <body>
-    <div id="logo"></div>
-
+    <div class="calculator-container">
+        <h1>Calcul ton BMI</h1>
+        <p>Hauteur en Centimètre:</p>
+        <input class="height-input-field" type="text">
+        <p>poids en kilograms:</p>
+        <input class="weight-input-field" type="text">
+        <button class="calculate"> Calcule</button>
+    </div>
+    <h3 class="result"></h3>
+    <p class="result-statement"></p>
     <script>
-        var logo = document.getElementById('logo');
-        var x = 0; // initial horizontal position
-        var y = 0; // initial vertical position
-        var dx = 5; // horizontal velocity
-        var dy = 5; // vertical velocity
+        var heightInput = document.querySelector(".height-input-field");
+var weightInput = document.querySelector(".weight-input-field");
+var calculateButton = document.querySelector(".calculate");
+var result = document.querySelector(".result");
+var statement = document.querySelector(".result-statement");
+var BMI, height, weight;
 
-        function animate() {
-            var containerWidth = window.innerWidth;
-            var containerHeight = window.innerHeight;
-            var logoWidth = logo.offsetWidth;
-            var logoHeight = logo.offsetHeight;
+calculateButton.addEventListener("click", ()=>{
+    
+    height2 = heightInput.value;
+    height = height2/100
+    weight = weightInput.value;
+    BMI = weight/(height**2); 
+    result.innerText = Math.round(BMI);
 
-            x += dx;
-            y += dy;
-
-            if (x + logoWidth >= containerWidth || x <= 0) {
-                dx = -dx; // reverse horizontal direction
-            }
-
-            if (y + logoHeight >= containerHeight || y <= 0) {
-                dy = -dy; // reverse vertical direction
-            }
-
-            logo.style.left = x + 'px';
-            logo.style.top = y + 'px';
-
-            requestAnimationFrame(animate);
-        }
-
-        animate();
+    if(BMI < 18.5){
+        statement.innerText = "Ton BMI est sous la moyenne";    
+    }else if((BMI > 18.5) && (BMI <= 24.9)){
+        statement.innerText = "Ton BMI est à la moyenne";
+    }else if((BMI >= 25) && (BMI <= 29.9 )){
+        statement.innerText = "Ton BMI est au dessus de la moyenne";
+    }else{
+        statement.innerText = "Ton BMI se trouve beaucoup au dessus de la moyenne";
+      }
+})
     </script>
 </body>
 </html>
