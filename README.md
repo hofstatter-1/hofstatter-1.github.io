@@ -1,5 +1,3 @@
-# hofstatter-1.github.io
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="style.css">
@@ -19,7 +17,6 @@
         <h1>Chemcalc</h1>
     </div>
     <hr color="#FFFFFF" noshade="" >
-    </hr>
 <p>Que veux-tu trouver ?</p>
 <optgroup style="font-family:verdana">
 <label for="operations">Option :</label>
@@ -42,7 +39,7 @@
 <h2 id ="Output"> </h2>
 <button onclick="window.print()">imprimer la page</button>
 <button onClick="window.location.reload();">supprimer tout</button>
-<p></p>
+
 <!--<button onclick = "window.location.href='.vscode\Projet finale\formules chimiques\cwemistwy\index.html';">tableaux periodic</button>-->
     <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
