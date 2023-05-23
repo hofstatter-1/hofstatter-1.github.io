@@ -1,54 +1,50 @@
 # hofstatter-1.github.io
+<!DOCTYPE html>
 <html lang="en">
-<style>
-body {
-    background-color: #3f3e3e;
-}
-</style>
 <head>
-    <body text="white"></body>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMIcalc</title>
+    <title>Formules chimiques</title>
 </head>
 <body>
-    <div class="calculator-container">
-        <h1>Calcul ton BMI</h1>
-        <p>Hauteur en Centimètre:</p>
-        <input class="height-input-field" type="text">
-        <p>poids en kilograms:</p>
-        <input class="weight-input-field" type="text">
-        <button class="calculate"> Calcule</button>
+
+
+    <div class='logo'>
+        <img src="Flask.png"
+        width="60"
+        height="70">
     </div>
-    <h3 class="result"></h3>
-    <p class="result-statement"></p>
-    <script>
-        var heightInput = document.querySelector(".height-input-field");
-var weightInput = document.querySelector(".weight-input-field");
-var calculateButton = document.querySelector(".calculate");
-var result = document.querySelector(".result");
-var statement = document.querySelector(".result-statement");
-var BMI, height, weight;
-
-calculateButton.addEventListener("click", ()=>{
-    
-    height2 = heightInput.value;
-    height = height2/100
-    weight = weightInput.value;
-    BMI = weight/(height**2); 
-    result.innerText = Math.round(BMI);
-
-    if(BMI < 18.5){
-        statement.innerText = "Ton BMI est sous la moyenne";    
-    }else if((BMI > 18.5) && (BMI <= 24.9)){
-        statement.innerText = "Ton BMI est à la moyenne";
-    }else if((BMI >= 25) && (BMI <= 29.9 )){
-        statement.innerText = "Ton BMI est au dessus de la moyenne";
-    }else{
-        statement.innerText = "Ton BMI se trouve beaucoup au dessus de la moyenne";
-      }
-})
-    </script>
+    <div class='text'>
+        <h1>Chemcalc</h1>
+    </div>
+    <hr color="#FFFFFF" noshade="" >
+    </hr>
+<p>Que veux-tu trouver ?</p>
+<optgroup style="font-family:verdana">
+<label for="operations">Option :</label>
+</optgroup>
+<select name="operations" id="operations">
+    <option value="M">Choisis un option</option>
+  <option value="M">masse molaire (g/mol) masse/nombre de mole</option>
+  <option value="m">masse de la substance (g) masse molaire * nombre de mole</option>
+  <option value="nm">nombre de mole (masse en g) masse(g)/masse molaire</option>
+  <option value="np">nombre de mole (#particule)nombre de particule/nombre d'avogadro</option>z
+  <option value="N"> nombre de particule, nombre de mole * nombre d'avogadro</option>
+  <option value="Na">nombre d'avogadro</option>
+</select>
+<p>Premiere entrée</p>
+<input type="number" id="myNumber" placeholder="entrée un nombre">
+<p>Deuxième entrée</p>
+<input type="number" id="myNumber" placeholder="entrée un nombre">
+<button>Calcul</button>
+<output id="a"></output>
+<h2 id ="Output"> </h2>
+<button onclick="window.print()">imprimer la page</button>
+<button onClick="window.location.reload();">supprimer tout</button>
+<p></p>
+<!--<button onclick = "window.location.href='.vscode\Projet finale\formules chimiques\cwemistwy\index.html';">tableaux periodic</button>-->
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </body>
-</html>
+</html> 
